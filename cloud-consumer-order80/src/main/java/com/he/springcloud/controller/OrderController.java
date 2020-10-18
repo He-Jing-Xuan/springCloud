@@ -21,7 +21,7 @@ public class OrderController {
                 CommonResult.class);//返回类型
     }
 
-    @GetMapping("customer/payment/{id}")
+    @GetMapping("customer/payment/get/{id}")
     public CommonResult<Payment> getPaymentById(@PathVariable("id")Long id){
         return restTemplate.getForObject(PAYMENT_URL + "/payment/" + id,//请求地址
                 CommonResult.class);//返回类型
