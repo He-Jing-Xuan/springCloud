@@ -42,6 +42,7 @@ public class PaymentController {
     //8001提供方
     @GetMapping(value = "/payment/feign/timeout")
     public String paymentFeignTimeout(){
+        System.out.println("3秒");
         // 业务逻辑处理正确，但是需要耗费3秒钟
         try { TimeUnit.SECONDS.sleep(3); } catch (InterruptedException e) { e.printStackTrace(); }
         return serverPort;

@@ -1,0 +1,17 @@
+server:
+  port: 8004
+eureka:
+  client:
+    # 注册进 Eureka 的服务中心
+    register-with-eureka: true
+    # 检索 服务中心 的其它服务
+    fetch-registry: true
+    service-url:
+      # 设置与 Eureka Server 交互的地址
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+  instance: #重点，和client平行
+    instance-id: payment8004 # 每个提供者的id不同，显示的不再是默认的项目名
+    prefer-ip-address: true # 可以显示ip地址
+spring:
+  application:
+    name: cloud-priovider-hystrix
